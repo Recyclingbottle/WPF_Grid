@@ -1,0 +1,52 @@
+﻿<Window x:Class="WPF_Grid.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Grid"
+        mc:Ignorable="d"
+        Title="Grid" Height="450" Width="800">
+    <Grid x:Name="Board">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <UniformGrid
+            Grid.Column="0"
+            Grid.Row="3"
+            Grid.ColumnSpan="3"
+            Rows="1"
+            Margin="10">
+            <Button 
+                Click="OnMoveLeft">
+                왼쪽
+            </Button>
+            <Button 
+                Click="OnMoveRight">
+                오른쪽
+            </Button>
+            <Button 
+                Click="OnMoveUp">
+                위쪽
+            </Button>
+            <Button 
+                Click="OnMoveDown">
+                아래쪽
+            </Button>
+        </UniformGrid>
+        <Ellipse
+            x:Name="Ball"
+            Grid.Column="0"
+            Grid.Row="0"
+            Width="100"
+            Height="100"
+            Fill="LightPink"/>
+    </Grid>
+</Window>
